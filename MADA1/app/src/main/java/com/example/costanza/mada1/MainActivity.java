@@ -18,6 +18,7 @@ implements View.OnClickListener{
     private TextView testTextView;
     private Button addButton;
     private Button viewButton;
+    public static EmployeeList theTeam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +30,20 @@ implements View.OnClickListener{
         addButton.setOnClickListener(this);
         viewButton = (Button)findViewById(R.id.viewListButton);
         viewButton.setOnClickListener(this);
+        theTeam = new EmployeeList();
     }
 
     @Override
     public void onClick(View view){
         switch(view.getId()){
             case R.id.addEmployeeButton:
-                Log.d("DEBUG", "DEBUG0");
-                setContentView(R.layout.activity_two);
+                theTeam.AddEmployee("Justin", "hergott", "RIM", "Captain", "Full-Time", 40);
+                theTeam.AddEmployee("Tyler", "hergott", "Brock", "Captain", "Full-Time", 40);
                 break;
             case R.id.viewListButton:
                 testTextView.setText("View.");
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
                 break;
         }
     }

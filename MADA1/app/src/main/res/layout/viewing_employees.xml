@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- FILE			: viewing_employees.xml
+- PROJECT		: PROG3150 - Assignment 1
+- PROGRAMMER	: Justin Hergott
+- FIRST VERSION	: 2017-02-01
+- DESCRIPTION 	: The layout page to view all employees
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/employeeListView"
+        android:layout_marginTop="60dp" />
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teamPickerSpinner"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:text="@string/sort_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sortByTextView"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"/>
+
+</FrameLayout>

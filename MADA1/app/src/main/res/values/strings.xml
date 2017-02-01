@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MADA1</string>
+    <string name="sort_label">View Employees By Team</string>
 </resources>

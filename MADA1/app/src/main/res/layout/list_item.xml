@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- FILE			: list_item.xml
+- PROJECT		: PROG3150 - Assignment 1
+- PROGRAMMER	: Justin Hergott
+- FIRST VERSION	: 2017-02-01
+- DESCRIPTION 	: The layout for the employee list view items
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="6dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/employeePic"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="6dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_toRightOf="@id/employeePic"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/employeeFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/employeeTitleAndType"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

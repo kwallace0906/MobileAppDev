@@ -1,8 +1,15 @@
+/*
+* FILE			: ViewEmployeesActivity.java
+* PROJECT		: PROG3150 - Assignment 1
+* PROGRAMMER	: Justin Hergott
+* FIRST VERSION	: 2017-02-01
+* DESCRIPTION 	: This file holds the class ViewEmployeeActivity.
+*/
+
 package com.example.costanza.mada1;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,15 +20,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by Costanza on 2017-01-30.
- */
-
-public class SecondActivity extends Activity {
-
+/*
+*	NAME	: ViewEmployeesActivity
+*	PURPOSE	: This class determines what happens when this activity is called.
+*               When it is created it will fill a spinner with all the team names
+*               from the list, and a list view of all the employees.
+*/
+public class ViewEmployeesActivity extends Activity {
     private Spinner sortSpinner;
     private ListView theList;
 
+    //
+    // FUNCTION		: onCreate
+    // DESCRIPTION	:
+    //		This function fills the spinner and the list view when the Activity is created.
+    // PARAMETERS	:
+    //		Bundle savedInstanceState   : the saved instance state
+    // RETURNS		:
+    //		None/Void
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -56,32 +73,18 @@ public class SecondActivity extends Activity {
         //Populate the list
         FillTheList(sortSpinner.getSelectedItem().toString());
 
-        /*Log.d("DEBUG", "Showing List Screen");
-        for(Iterator<Employee> i = viewingList.iterator(); i.hasNext();){
-            Employee temp = i.next();
-            Log.d("DEBUG", temp.GetLastName());
-        }*/
     }
 
+    //
+    // FUNCTION		: FillTheList
+    // DESCRIPTION	:
+    //		This function fills the list view with Employees that have the team name selected.
+    // PARAMETERS	:
+    //		String sortWord : the word to sort by (teamName)
+    // RETURNS		:
+    //		None/Void
+    //
     public void FillTheList(String sortWord){
-        /*List<Employee> viewingList = MainActivity.theTeam.GetFullList();
-        List<String> listItems = new ArrayList<String>();
-        //Populate the list of the names to be in the list view
-        for(Iterator<Employee> i = viewingList.iterator(); i.hasNext();){
-            Employee temp = i.next();
-            if(sortWord.equals("All")){
-                listItems.add(temp.GetFirstName() + " " + temp.GetLastName());
-            }
-            else{
-                if(temp.GetTeamName().equals(sortWord)){
-                    listItems.add(temp.GetFirstName() + " " + temp.GetLastName());
-                }
-            }
-        }
-        //Create adapter for the list view
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
-        theList = (ListView) findViewById(R.id.employeeListView);
-        theList.setAdapter(listAdapter);*/
         List<Employee> viewingList = MainActivity.theTeam.GetFullList();
         ArrayList<Employee> listItems = new ArrayList<Employee>();
         //Populate the list of the names to be in the list view
